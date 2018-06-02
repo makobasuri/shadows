@@ -1,0 +1,39 @@
+{
+  "name": "shadows",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserlist": [
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makobasuri/boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makobasuri/boilerplate/issues"
+  },
+  "homepage": "https://github.com/makobasuri/boilerplate#readme",
+  "dependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^4.0.0",
+    "gulp-hb": "^7.0.1",
+    "gulp-sass": "^3.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.5.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.3",
+    "webpack": "^4.9.1"
+  }
+}

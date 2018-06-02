@@ -1,0 +1,60 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	border-radius: 8px;
+	margin: 16px auto;
+	max-width: 300px;
+	height: 200px;
+	background-color: rgb(30, 150, 210);
+}
+
+.badge {
+	align-items: center;
+	justify-content: center;
+
+	&__stripe {
+		flex: 0 0 auto;
+		margin-left: 16px;
+		margin-right: 16px;
+		padding: 8px 16px;
+		background-color: white;
+	}
+
+	&__shadow {
+		position: absolute;
+		transform-origin: left top;
+		background-color: rgba(0, 0, 0, .5);
+
+		&--top {
+			transform: skewY(45deg);
+		}
+
+		&--bottom {
+			transform: skewX(45deg);
+		}
+	}
+}
+
+.badge1 {
+	display: block;
+	overflow: hidden;
+
+	&__stripe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		padding: 8px 16px;
+		background-color: white;
+		z-index: 1;
+	}
+
+	&__shadow {
+		position: absolute;
+		left: 50%;
+		height: 100%;
+		transform-origin: top left;
+		background-color: rgba(0, 0, 0, .5);
+	}
+}
