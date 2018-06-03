@@ -27,13 +27,13 @@
     "gulp-sass": "^3.2.1"
   },
   "devDependencies": {
-    "autoprefixer": "^8.5.1",
+    "autoprefixer": "^8.6.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.3",
-    "webpack": "^4.9.1"
+    "webpack": "^4.10.2"
   }
 }
