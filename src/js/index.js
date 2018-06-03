@@ -48,7 +48,7 @@
 	const badgeSvg = document.querySelector('.badge-svg');
 	const stripeSvg = badgeSvg.querySelector('.badge-svg__stripe');
 	const shadowSvg = badgeSvg.querySelector('.badge-svg__shadow');
-	const polygon = shadowSvg.firstChild;
+	const polygon = shadowSvg.firstElementChild;
 
 	const stripeSvgHeight = stripeSvg.clientHeight;
 	const stripeSvgHalfHeight = stripeSvgHeight / 2;
@@ -58,11 +58,11 @@
 	shadowSvg.style.top = `calc(50% - ${stripeSvgHalfHeight}px)`;
 	shadowSvg.style.left = `calc(50% - ${stripeSvgWidth / 2}px)`;
 	shadowSvg.setAttribute('viewBox', `0 0 ${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25}`);
-	console.log(polygon.setAttribute(
+	polygon.setAttribute(
 		'points',
 		`0 ${stripeSvgHeight} `
 		+ `${stripeSvgWidth / 2} ${stripeSvgHeight * 1.25} `
 		+ `${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25} `
 		+ `0 ${stripeSvgHeight}`
-	));
+	);
 })()
