@@ -7,6 +7,9 @@
 		}
 	}
 
+	// ----------------------------------------------------------
+	// first
+
 	const badge = document.querySelector('.badge');
 	const stripe = badge.querySelector('.badge__stripe');
 	const shadowBottom = badge.querySelector('.badge__shadow--bottom');
@@ -23,6 +26,9 @@
 	shadowTop.style.width = stripeHeight / 3 + 'px';
 	shadowTop.style.top = 'calc(50% + ' + (stripeHeight / -2) + 'px)';
 	shadowTop.style.left = 'calc(50% + ' + (stripeWidth / 2) + 'px)';
+
+	// ----------------------------------------------------------------
+	// second
 
 	const badge1 = document.querySelector('.badge1');
 	const stripe1 = badge1.querySelector('.badge1__stripe');
@@ -44,12 +50,15 @@
 		* (180 / Math.PI)
 	;
 
-	shadow.style.width = `${hypothenuse}px`;
-	shadow.style.top = `50%`;
-	shadow.style.transform
-		= `rotate(-${angle}deg)
-			translateX(-50%)`
-	;
+	style(shadow, {
+		width = `${hypothenuse}px`,
+		top = `50%`,
+		transform = `rotate(-${angle}deg)
+					 translateX(-50%)`
+	})
+
+	// ----------------------------------------------------------
+	// third
 
 	const badgeSvg = document.querySelector('.badge-svg');
 	const stripeSvg = badgeSvg.querySelector('.badge-svg__stripe');
