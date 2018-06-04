@@ -19,13 +19,17 @@
 	const stripeWidth = stripe.offsetWidth;
 	const stripeTotalWidth = stripe.getBoundingClientRect().width;
 
-	shadowBottom.style.width = stripeWidth + 'px';
-	shadowBottom.style.height = stripeHeight / 3 + 'px';
-	shadowBottom.style.top = 'calc(50% + ' + (stripeHeight / 2) + 'px)';
-	shadowTop.style.height = stripeHeight + 'px';
-	shadowTop.style.width = stripeHeight / 3 + 'px';
-	shadowTop.style.top = 'calc(50% + ' + (stripeHeight / -2) + 'px)';
-	shadowTop.style.left = 'calc(50% + ' + (stripeWidth / 2) + 'px)';
+	style(shadowBottom, {
+		width = stripeWidth + 'px',
+		height = stripeHeight / 3 + 'px',
+		top = 'calc(50% + ' + (stripeHeight / 2) + 'px)'
+	})
+	style(shadowTop, {
+		height = stripeHeight + 'px',
+		width = stripeHeight / 3 + 'px',
+		top = 'calc(50% + ' + (stripeHeight / -2) + 'px)',
+		left = 'calc(50% + ' + (stripeWidth / 2) + 'px)'
+	})
 
 	// ----------------------------------------------------------------
 	// second
@@ -74,10 +78,7 @@
 		top = `calc(50% - ${stripeSvgHalfHeight}px)`,
 		left = `calc(50% - ${stripeSvgWidth / 2}px)`
 	})
-//	shadowSvg.style.width = `${stripeSvgWidth * 1.25}px`;
-//	shadowSvg.style.top = `calc(50% - ${stripeSvgHalfHeight}px)`;
-//	shadowSvg.style.left = `calc(50% - ${stripeSvgWidth / 2}px)`;
-//	shadowSvg.setAttribute('viewBox', `0 0 ${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25}`);
+
 	polygon.setAttribute(
 		'points',
 		`0 ${stripeSvgHeight} `
