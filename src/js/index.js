@@ -1,6 +1,12 @@
 (() => {
 	'use strict';
 
+	const style = (element, declarations) => {
+		for (declaration in declarations) {
+			element.style[declaration] = declaration
+		}
+	}
+
 	const badge = document.querySelector('.badge');
 	const stripe = badge.querySelector('.badge__stripe');
 	const shadowBottom = badge.querySelector('.badge__shadow--bottom');
@@ -54,10 +60,15 @@
 	const stripeSvgHalfHeight = stripeSvgHeight / 2;
 	const stripeSvgWidth = stripeSvg.offsetWidth;
 
-	shadowSvg.style.width = `${stripeSvgWidth * 1.25}px`;
-	shadowSvg.style.top = `calc(50% - ${stripeSvgHalfHeight}px)`;
-	shadowSvg.style.left = `calc(50% - ${stripeSvgWidth / 2}px)`;
-	shadowSvg.setAttribute('viewBox', `0 0 ${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25}`);
+	style(shadowSvg, {
+		width = `${stripeSvgWidth * 1.25}px`,
+		top = `calc(50% - ${stripeSvgHalfHeight}px)`,
+		left = `calc(50% - ${stripeSvgWidth / 2}px)`
+	})
+//	shadowSvg.style.width = `${stripeSvgWidth * 1.25}px`;
+//	shadowSvg.style.top = `calc(50% - ${stripeSvgHalfHeight}px)`;
+//	shadowSvg.style.left = `calc(50% - ${stripeSvgWidth / 2}px)`;
+//	shadowSvg.setAttribute('viewBox', `0 0 ${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25}`);
 	polygon.setAttribute(
 		'points',
 		`0 ${stripeSvgHeight} `
