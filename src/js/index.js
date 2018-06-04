@@ -7,7 +7,7 @@
 		}
 	}
 
-	// ----------------------------------------------------------
+	// ----------------------------------------------------------------
 	// first
 
 	const badge = document.querySelector('.badge');
@@ -61,7 +61,7 @@
 					 translateX(-50%)`
 	})
 
-	// ----------------------------------------------------------
+	// ----------------------------------------------------------------
 	// third
 
 	const badgeSvg = document.querySelector('.badge-svg');
@@ -81,9 +81,11 @@
 
 	polygon.setAttribute(
 		'points',
-		`0 ${stripeSvgHeight} `
-		+ `${stripeSvgWidth / 2} ${stripeSvgHeight * 1.25} `
-		+ `${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.25} `
-		+ `0 ${stripeSvgHeight}`
+		`0,, ${stripeSvgHeight} `
+		+ `${stripeSvgWidth / 4}, ${stripeSvgHeight * 1.25} `
+		+ `${stripeSvgWidth}, ${stripeSvgHeight * 1.25} `
+		+ `${stripeSvgWidth / 4}, ${stripeSvgHeight} `
+		+ `${stripeSvgWidth * 1.25}, ${stripeSvgHeight * 1.25} `
+		+ `0, ${stripeSvgHeight}`
 	);
 })()
