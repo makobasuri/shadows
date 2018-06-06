@@ -36,6 +36,7 @@ const renderTpls = () => {
 
 const scripts = (done) => {
 	webpack({
+		mode: 'development',
 		context: __dirname,
 		entry: './src/js/index.js',
 		devtool: 'cheap-module-eval-source-map',

@@ -2,8 +2,8 @@
 	'use strict';
 
 	const style = (element, declarations) => {
-		for (declaration in declarations) {
-			element.style[declaration] = declaration
+		for (const declaration in declarations) {
+			element.style[declaration] = declarations[declaration];
 		}
 	}
 
@@ -20,15 +20,15 @@
 	const stripeTotalWidth = stripe.getBoundingClientRect().width;
 
 	style(shadowBottom, {
-		width = stripeWidth + 'px',
-		height = stripeHeight / 3 + 'px',
-		top = 'calc(50% + ' + (stripeHeight / 2) + 'px)'
+		width: stripeWidth + 'px',
+		height: stripeHeight / 3 + 'px',
+		top: 'calc(50% + ' + stripeHeight / 2 + 'px)'
 	})
 	style(shadowTop, {
-		height = stripeHeight + 'px',
-		width = stripeHeight / 3 + 'px',
-		top = 'calc(50% + ' + (stripeHeight / -2) + 'px)',
-		left = 'calc(50% + ' + (stripeWidth / 2) + 'px)'
+		height: stripeHeight + 'px',
+		width: stripeHeight / 3 + 'px',
+		top: 'calc(50% + ' + stripeHeight / -2 + 'px)',
+		left: 'calc(50% + ' + stripeWidth / 2 + 'px)'
 	})
 
 	// ----------------------------------------------------------------
@@ -55,9 +55,9 @@
 	;
 
 	style(shadow, {
-		width = `${hypothenuse}px`,
-		top = `50%`,
-		transform = `rotate(-${angle}deg)
+		width: `${hypothenuse}px`,
+		top: `50%`,
+		transform: `rotate(-${angle}deg)
 					 translateX(-50%)`
 	})
 
@@ -74,18 +74,20 @@
 	const stripeSvgWidth = stripeSvg.offsetWidth;
 
 	style(shadowSvg, {
-		width = `${stripeSvgWidth * 1.25}px`,
-		top = `calc(50% - ${stripeSvgHalfHeight}px)`,
-		left = `calc(50% - ${stripeSvgWidth / 2}px)`
+		width: `${stripeSvgWidth * 1.25}px`,
+		top: `calc(50% - ${stripeSvgHalfHeight}px)`,
+		left: `calc(50% - ${stripeSvgWidth / 2}px)`
 	})
+
+	shadowSvg.setAttribute('viewBox', `0 0 ${stripeSvgWidth * 1.25} ${stripeSvgHeight * 1.5}`)
 
 	polygon.setAttribute(
 		'points',
-		`0,, ${stripeSvgHeight} `
-		+ `${stripeSvgWidth / 4}, ${stripeSvgHeight * 1.25} `
-		+ `${stripeSvgWidth}, ${stripeSvgHeight * 1.25} `
-		+ `${stripeSvgWidth / 4}, ${stripeSvgHeight} `
-		+ `${stripeSvgWidth * 1.25}, ${stripeSvgHeight * 1.25} `
-		+ `0, ${stripeSvgHeight}`
+		`0,${stripeSvgHeight} `
+		+ `${stripeSvgWidth / 4},${stripeSvgHeight * 1.25} `
+		+ `${stripeSvgWidth * 1.25},${stripeSvgHeight * 1.25} `
+		+ `${stripeSvgWidth * 1.25},${stripeSvgHeight * 0.25} `
+		+ `${stripeSvgWidth},0 `
+		+ `0,${stripeSvgHeight}`
 	);
 })()
